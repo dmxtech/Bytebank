@@ -3,9 +3,22 @@ public class Cuenta {
 
     private double saldo;
     private int agencia;
-
     private int numero;
     private Cliente titular = new Cliente();
+
+    public Cuenta() {
+
+    }
+
+    public Cuenta(int agencia) {
+        if (agencia <= 0) {
+            System.out.println("No se permite 0");
+            this.agencia = 1;
+        } else {
+            this.agencia = agencia;
+        }
+        System.out.println("Se creo una nueva cuenta");
+    }
 
     public void depositar(double valor) {
         this.saldo = this.saldo + valor;
