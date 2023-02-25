@@ -10,14 +10,18 @@ public class Cuenta {
 
     }
 
+    private static int total = 0;
+
     public Cuenta(int agencia) {
+
         if (agencia <= 0) {
             System.out.println("No se permite 0");
             this.agencia = 1;
         } else {
             this.agencia = agencia;
         }
-        System.out.println("Se creo una nueva cuenta");
+        total++;
+        System.out.println("Se creo una nueva cuenta, se van creando " + total + " cuentas ");
     }
 
     public void depositar(double valor) {
